@@ -1,0 +1,55 @@
+{
+  "aviary_1": {
+    "day_mapping": {
+      "d1": "2025-01-01",
+      "d2": "2025-01-02",
+      "d3": "2025-01-03"
+    },
+    "target_species": ["Red-billed quelea"],
+    "n_files": 12627
+  },
+  "aviary_2": {
+    "day_mapping": {
+      "d1": "2025-01-01",
+      "d2": "2025-01-02",
+      "d3": "2025-01-03"
+    },
+    "target_species": ["Greater flamingo", "Hadada ibis"],
+    "n_files": 25569
+  },
+  "aviary_3": {
+    "day_mapping": {
+      "d1": "2025-01-01",
+      "d2": "2025-01-02",
+      "d3": "2025-01-03"
+    },
+    "target_species": ["Red-billed quelea"],
+    "n_files": 11879
+  },
+  "aviary_4": {
+    "day_mapping": {
+      "d1": "2025-01-01",
+      "d2": "2025-01-02",
+      "d3": "2025-01-03"
+    },
+    "target_species": ["Greater flamingo", "Hadada ibis"],
+    "n_files": 36340
+  },
+  "aviary_5": {
+    "day_mapping": {
+      "d1": "2025-01-01",
+      "d2": "2025-01-02"
+    },
+    "target_species": ["Greater flamingo"],
+    "n_files": 19363
+  },
+  "aviary_6": {
+    "day_mapping": {
+      "d1": "2025-01-01",
+      "d2": "2025-01-02",
+      "d3": "2025-01-03"
+    },
+    "target_species": ["Greater flamingo"],
+    "n_files": 35121
+  }
+}

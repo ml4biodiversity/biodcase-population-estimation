@@ -1,0 +1,46 @@
+aviary_id,common_name,scientific_name,count,is_target
+aviary_1,African spoonbill,Platalea alba,9,0
+aviary_1,Spotted thick-knee,Burhinus capensis,5,0
+aviary_1,Eurasian hoopoe,Upupa epops,3,0
+aviary_1,Red-crested turaco,Tauraco erythrolophus,3,0
+aviary_1,Grey crowned crane,Balearica regulorum,2,0
+aviary_1,Speckled pigeon,Columba guinea,1,0
+aviary_1,Red-billed quelea,Quelea quelea,153,1
+aviary_1,Violet-backed starling,Cinnyricinclus leucogaster,6,0
+aviary_2,Greater flamingo,Phoenicopterus roseus,107,1
+aviary_2,Hadada ibis,Bostrychia hagedash,6,1
+aviary_3,Black-headed weaver,Ploceus melanocephalus,5,0
+aviary_3,Eurasian hoopoe,Upupa epops,2,0
+aviary_3,Red-billed quelea,Quelea quelea,61,1
+aviary_4,Demoiselle crane,Anthropoides virgo,3,0
+aviary_4,Tufted duck,Aythya fuligula,2,0
+aviary_4,Hadada ibis,Bostrychia hagedash,4,1
+aviary_4,Cattle egret,Bubulcus ibis,10,0
+aviary_4,Abdim's stork,Ciconia abdimii,2,0
+aviary_4,Fulvous whistling duck,Dendrocygna bicolor,5,0
+aviary_4,Southern bald ibis,Geronticus calvus,6,0
+aviary_4,Eurasian wigeon,Mareca penelope,4,0
+aviary_4,Greater flamingo,Phoenicopterus roseus,161,1
+aviary_4,Knob-billed duck,Sarkidiornis melanotos,8,0
+aviary_4,Hamerkop,Scopus umbretta,2,0
+aviary_4,Northern shoveler,Spatula clypeata,2,0
+aviary_5,Black kite,Milvus migrans,2,0
+aviary_5,Black stork,Ciconia nigra,3,0
+aviary_5,Chiloe wigeon,Mareca sibilatrix,3,0
+aviary_5,Goliath heron,Ardea goliath,2,0
+aviary_5,Greater flamingo,Phoenicopterus roseus,52,1
+aviary_5,Little egret,Egretta garzetta,7,0
+aviary_5,Northern bald ibis,Geronticus eremita,19,0
+aviary_5,Pink-backed pelican,Pelecanus rufescens,16,0
+aviary_5,Scarlet ibis,Eudocimus ruber,106,0
+aviary_5,Straw-necked ibis,Threskiornis spinicollis,6,0
+aviary_6,Black kite,Milvus migrans,2,0
+aviary_6,Black stork,Ciconia nigra,3,0
+aviary_6,Chiloe wigeon,Mareca sibilatrix,3,0
+aviary_6,Goliath heron,Ardea goliath,2,0
+aviary_6,Greater flamingo,Phoenicopterus roseus,52,1
+aviary_6,Little egret,Egretta garzetta,7,0
+aviary_6,Northern bald ibis,Geronticus eremita,19,0
+aviary_6,Pink-backed pelican,Pelecanus rufescens,16,0
+aviary_6,Scarlet ibis,Eudocimus ruber,106,0
+aviary_6,Straw-necked ibis,Threskiornis spinicollis,6,0
