@@ -81,14 +81,14 @@ The feature builder reads detection CSVs and extracts a rich feature vector per 
 ```bash
 python feature_builder.py \
     --detections-dir detections/ \
-    --output results/stage2_features.csv
+    --output features/stage2_features.csv
 ```
 
 **For BirdNET detections:**
 ```bash
 python feature_builder_birdnet.py \
     --detections-dir detections/ \
-    --output results/stage2_features_birdnet.csv
+    --output features/stage2_features_birdnet.csv
 ```
 
 **Optional: acoustic features** (requires access to the original audio and `scikit-maad`):
@@ -99,7 +99,7 @@ python feature_builder.py \
     --detections-dir detections/ \
     --audio-root /path/to/audio/ \
     --device cuda --workers 4 \
-    --output results/stage2_features.csv
+    --output features/stage2_features.csv
 ```
 
 ### Stage 3: Population estimation
@@ -107,7 +107,7 @@ python feature_builder.py \
 The estimator fits species-specific leave-one-out regression models and reports per-aviary population estimates:
 
 ```bash
-python estimator.py --features results/stage2_features.csv
+python estimator.py --features features/stage2_features.csv
 ```
 
 ## Repository structure
@@ -121,7 +121,7 @@ biodcase-population-estimation/
 ├── feature_builder_birdnet.py   # Stage-2 feature builder (BirdNET detection format)
 ├── estimator.py                 # Population estimator (stage 2)
 ├── detections/                  # Place detection CSVs here (not included)
-└── results/                     # Output directory for feature CSVs (created automatically)
+└── features/                    # Output directory for feature CSVs (created automatically)
 ```
 
 ## Dependencies

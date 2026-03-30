@@ -40,7 +40,7 @@ Usage
 -----
 ::
 
-    python estimator.py --features results/stage2_features.csv
+    python estimator.py --features features/stage2_features.csv
 """
 
 import csv
@@ -455,7 +455,7 @@ class LinearCoefficientModel:
                 continue
             pred = feat_val / coeff
             if np.isfinite(pred):
-                y_pred[i] = max(float(pred), 0.0)
+                y_pred[i] = max(round(float(pred)), 0)
         return y_true, y_pred, {
             "global_coeff": global_coeff,
             "global_cv": global_cv,
@@ -530,7 +530,7 @@ class SimilarityWeightedCoefficientModel:
             coeff = float(np.sum(weights * coeffs) / np.sum(weights))
             feat_val = self._feature_value(p)
             if coeff > 0 and not np.isnan(feat_val):
-                y_pred[i] = max(feat_val / coeff, 0.0)
+                y_pred[i] = max(round(feat_val / coeff), 0)
 
         return y_true, y_pred, {
             "structure_features": self.structure_features,
@@ -546,7 +546,7 @@ def _print_predictions(points, y_true, y_pred, metrics):
     for i, p in enumerate(points):
         pred = y_pred[i]
         err = pred - y_true[i] if not np.isnan(pred) else float('nan')
-        print(f"    {p.aviary[:30]:<32s} {y_true[i]:5.0f} {pred:8.1f} {err:+8.1f}")
+        print(f"    {p.aviary[:30]:<32s} {y_true[i]:5.0f} {pred:8.0f} {err:+8.0f}")
     print(f"    MAE={metrics['MAE']:.2f}  RMSE={metrics['RMSE']:.2f}  R2={metrics['R2']:.4f}  MAPE={metrics['MAPE']:.1f}%  N={metrics['N']}")
 
 
@@ -705,7 +705,7 @@ def analyze_species(species_name, points):
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="BioDCASE 2026 -- population estimator (stage 2)")
-    parser.add_argument("--features", default="results/stage2_features.csv")
+    parser.add_argument("--features", default="features/stage2_features.csv")
     args = parser.parse_args()
 
     print("=" * 108)
@@ -776,7 +776,7 @@ def main():
             err = pred - yt[i] if not np.isnan(pred) else float('nan')
             combined_true.append(yt[i])
             combined_pred.append(pred)
-            print(f"  {species[:20]:<22s} {best_name[:40]:<42s} {p.aviary[:26]:<28s} {yt[i]:5.0f} {pred:7.1f} {err:+7.1f}")
+            print(f"  {species[:20]:<22s} {best_name[:40]:<42s} {p.aviary[:26]:<28s} {yt[i]:5.0f} {pred:7.0f} {err:+7.0f}")
 
     if combined_true:
         ct = np.asarray(combined_true, dtype=np.float64)

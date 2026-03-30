@@ -33,14 +33,14 @@ Usage
 ::
 
     python feature_builder_birdnet.py \\
-        --detections-dir ./birdnet_detections \\
-        --output results/stage2_features_birdnet.csv \\
+        --detections-dir ./detections \\
+        --output features/stage2_features_birdnet.csv \\
         --audio-root /path/to/audio \\
         --device cuda --workers 4
 
 Then run the estimator on the BirdNET features::
 
-    python estimator.py --features results/stage2_features_birdnet.csv
+    python estimator.py --features features/stage2_features_birdnet.csv
 
 Notes
 -----
@@ -97,6 +97,7 @@ from feature_builder import (
     AVIARY_GT_ALIAS,
     FEATURE_COLUMNS,
     TARGET_SPECIES,
+    ALL_RELEVANT,
 )
 
 try:
@@ -119,7 +120,7 @@ DEFAULT_BIRDNET_PATHS = {
     "aviary_csv": Path(__file__).parent / "ground_truth.csv",
     "aviary_config": Path(__file__).parent / "aviary_config.json",
     "detections_dir": Path(__file__).parent / "detections",
-    "output_dir": Path(__file__).parent / "results",
+    "output_dir": Path(__file__).parent / "features",
     "embeddings_dir": None,
 }
 

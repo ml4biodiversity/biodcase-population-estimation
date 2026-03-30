@@ -42,7 +42,7 @@ Usage
 
     python feature_builder.py \\
         --detections-dir ./detections \\
-        --output results/stage2_features.csv \\
+        --output features/stage2_features.csv \\
         --audio-root /path/to/audio \\
         --device cuda --workers 4
 
@@ -122,7 +122,7 @@ DEFAULT_PATHS = {
     "aviary_csv": Path(__file__).parent / "ground_truth.csv",
     "aviary_config": Path(__file__).parent / "aviary_config.json",
     "detections_dir": Path(__file__).parent / "detections",
-    "output_dir": Path(__file__).parent / "results",
+    "output_dir": Path(__file__).parent / "features",
     "embeddings_dir": None,
 }
 
