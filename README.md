@@ -222,6 +222,7 @@ Filenames follow the pattern `rec_dN_HH_MM_SS[.ffffff].wav` where `dN` is a day 
 ## Citation
 
 If you use this repository, please cite the baseline software.
+
 @software{argin2026biodcase_baseline,
   author       = {Arg{\i}n, Emre and H{\"a}rm{\"a}, Aki and Arslan-Dogan, Aysenur},
   title        = {{BioDCASE 2026 Bird Counting Baseline: Avian Population Estimation from Passive Acoustic Recordings}},
@@ -232,6 +233,7 @@ If you use this repository, please cite the baseline software.
 }
 
 If you use the **BioDCASE 2026 Bird Counting** dataset, please also cite the dataset.
+
 @dataset{argin2026biodcase_dataset,
   author       = {Arg{\i}n, Emre and H{\"a}rm{\"a}, Aki and Arslan-Dogan, Aysenur},
   title        = {{BioDCASE 2026 Bird Counting: Avian Population Estimation from Passive Acoustic Recordings}},
@@ -241,6 +243,7 @@ If you use the **BioDCASE 2026 Bird Counting** dataset, please also cite the dat
 }
 
 If you use **ARIA** detections or build on the ARIA methodology, please also cite the ARIA paper.
+
 @inproceedings{argin2026aria,
   author       = {Arg{\i}n, Emre and H{\"a}rm{\"a}, Aki and Dreesen, Philippe},
   title        = {{ARIA: Acoustic Recognition for Inventory in Aviaries}},
