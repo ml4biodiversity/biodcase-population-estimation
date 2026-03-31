@@ -174,8 +174,8 @@ The feature builder extracts **80+ features** per (aviary, species) pair, organi
 
 ```csv
 aviary_id,common_name,scientific_name,count,is_target
-aviary_1,Red-billed quelea,Quelea quelea,153,1
-aviary_1,African spoonbill,Platalea alba,9,0
+dev_aviary_1,Red-billed quelea,Quelea quelea,153,1
+dev_aviary_1,African spoonbill,Platalea alba,9,0
 ...
 ```
 
