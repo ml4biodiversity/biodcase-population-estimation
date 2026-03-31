@@ -220,37 +220,42 @@ Filenames follow the pattern `rec_dN_HH_MM_SS[.ffffff].wav` where `dN` is a day 
 - **The estimator uses leave-one-out cross-validation** since the dataset contains only 6 aviaries. It runs 5 model families and reports the best per species. Three models (1, 2, 4) work with detection-only features; two models (3, 5) additionally require acoustic features from `--audio-root`. If acoustic features are absent, models 3 and 5 are automatically skipped.
 
 ## Citation
-
 If you use this repository, please cite the baseline software.
-
+```bibtex
 @software{argin2026biodcase_baseline,
   author       = {Arg{\i}n, Emre and H{\"a}rm{\"a}, Aki and Arslan-Dogan, Aysenur},
-  title        = {{BioDCASE 2026 Bird Counting Baseline: Avian Population Estimation from Passive Acoustic Recordings}},
+  title        = {{BioDCASE 2026 Bird Counting Baseline: Avian Population Estimation
+                   from Passive Acoustic Recordings}},
   year         = {2026},
   publisher    = {GitHub},
   url          = {https://github.com/ml4biodiversity/biodcase-population-estimation},
   version      = {1.0.0},
 }
+```
 
 If you use the **BioDCASE 2026 Bird Counting** dataset, please also cite the dataset.
-
+```bibtex
 @dataset{argin2026biodcase_dataset,
   author       = {Arg{\i}n, Emre and H{\"a}rm{\"a}, Aki and Arslan-Dogan, Aysenur},
-  title        = {{BioDCASE 2026 Bird Counting: Avian Population Estimation from Passive Acoustic Recordings}},
+  title        = {{BioDCASE 2026 Bird Counting: Avian Population Estimation
+                   from Passive Acoustic Recordings}},
   year         = {2026},
   publisher    = {Hugging Face},
   url          = {https://huggingface.co/datasets/Emreargin/BioDCASE2026_Bird_Counting},
 }
+```
 
 If you use **ARIA** detections or build on the ARIA methodology, please also cite the ARIA paper.
-
+```bibtex
 @inproceedings{argin2026aria,
   author       = {Arg{\i}n, Emre and H{\"a}rm{\"a}, Aki and Dreesen, Philippe},
   title        = {{ARIA: Acoustic Recognition for Inventory in Aviaries}},
-  booktitle    = {Proceedings of the IEEE World Congress on Computational Intelligence (WCCI) / International Joint Conference on Neural Networks (IJCNN)},
+  booktitle    = {Proceedings of the IEEE World Congress on Computational Intelligence
+                  (WCCI) / International Joint Conference on Neural Networks (IJCNN)},
   year         = {2026},
   note         = {Accepted, to appear},
 }
+```
 
 ## License
 
