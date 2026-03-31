@@ -27,10 +27,10 @@ Detection CSV naming convention
 --------------------------------
 Participants must name their detection CSVs as::
 
-    aviary_1_detections.csv
-    aviary_2_detections.csv
+    dev_aviary_1_detections.csv
+    dev_aviary_2_detections.csv
     ...
-    aviary_6_detections.csv
+    dev_aviary_6_detections.csv
 
 ARIA detection format (from ``pip install aria-inference``)::
 
@@ -45,6 +45,10 @@ Usage
         --output features/stage2_features.csv \\
         --audio-root /path/to/audio \\
         --device cuda --workers 4
+
+Then run the estimator on the ARIA features::
+
+    python estimator.py --features features/stage2_features.csv
 
 Performance notes
 -----------------
@@ -131,7 +135,7 @@ def load_aviary_day_mappings(config_path: str) -> Dict[str, Dict[str, str]]:
     """Load aviary_config.json and return per-aviary day mappings.
 
     Returns ``{aviary_id: {dN: "YYYY-MM-DD"}}`` — e.g.
-    ``{"aviary_1": {"d1": "2025-01-01", "d2": "2025-01-02", ...}}``.
+    ``{"dev_aviary_1": {"d1": "2025-01-01", "d2": "2025-01-02", ...}}``.
 
     The mappings are used by ``parse_filename_timestamp`` to resolve
     the BioDCASE filename format ``rec_d1_19_05_02.500000.wav`` into a
@@ -155,12 +159,12 @@ TARGET_SPECIES = {
 
 
 CSV_TO_AVIARY = {
-    "aviary_1": ["aviary_1"],
-    "aviary_2": ["aviary_2"],
-    "aviary_3": ["aviary_3"],
-    "aviary_4": ["aviary_4"],
-    "aviary_5": ["aviary_5"],
-    "aviary_6": ["aviary_6"],
+    "dev_aviary_1": ["dev_aviary_1"],
+    "dev_aviary_2": ["dev_aviary_2"],
+    "dev_aviary_3": ["dev_aviary_3"],
+    "dev_aviary_4": ["dev_aviary_4"],
+    "dev_aviary_5": ["dev_aviary_5"],
+    "dev_aviary_6": ["dev_aviary_6"],
 }
 
 # Maps session-specific aviary names to the ground-truth aviary name.
@@ -168,12 +172,12 @@ CSV_TO_AVIARY = {
 AVIARY_GT_ALIAS = {}
 
 CSV_TO_EMBEDDING_PREFIX = {
-    "aviary_1": "aviary_1",
-    "aviary_2": "aviary_2",
-    "aviary_3": "aviary_3",
-    "aviary_4": "aviary_4",
-    "aviary_5": "aviary_5",
-    "aviary_6": "aviary_6",
+    "dev_aviary_1": "dev_aviary_1",
+    "dev_aviary_2": "dev_aviary_2",
+    "dev_aviary_3": "dev_aviary_3",
+    "dev_aviary_4": "dev_aviary_4",
+    "dev_aviary_5": "dev_aviary_5",
+    "dev_aviary_6": "dev_aviary_6",
 }
 
 # Some species have multiple common names in the dataset.  We want to unify these
@@ -751,7 +755,7 @@ class AudioPathResolver:
     When multiple files share the same basename (common with the BioDCASE
     naming scheme ``rec_d1_HH_MM_SS.wav`` across aviaries), an optional
     ``aviary_hint`` narrows the lookup to paths containing that string
-    (e.g. ``"aviary_1"``).
+    (e.g. ``"dev_aviary_1"``).
     """
 
     def __init__(self, audio_roots: Sequence[str]):
@@ -1110,7 +1114,7 @@ class AcousticIndexExtractor:
         Parameters
         ----------
         aviary_hint : str, optional
-            Aviary identifier (e.g. ``"aviary_1"``) used to disambiguate
+            Aviary identifier (e.g. ``"dev_aviary_1"``) used to disambiguate
             audio files when multiple aviaries share the same basename.
         """
         seg_feature_map: Dict[Tuple, Dict[str, float]] = {}

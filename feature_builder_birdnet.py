@@ -18,10 +18,10 @@ Detection CSV naming convention
 --------------------------------
 Participants must name their detection CSVs as::
 
-    aviary_1_detections.csv
-    aviary_2_detections.csv
+    dev_aviary_1_detections.csv
+    dev_aviary_2_detections.csv
     ...
-    aviary_6_detections.csv
+    dev_aviary_6_detections.csv
 
 BirdNET detection format (from ``pip install aria-inference-birdnet`` or
 default BirdNET)::
@@ -33,7 +33,7 @@ Usage
 ::
 
     python feature_builder_birdnet.py \\
-        --detections-dir ./detections \\
+        --detections-dir ./birdnet_detections \\
         --output features/stage2_features_birdnet.csv \\
         --audio-root /path/to/audio \\
         --device cuda --workers 4
@@ -125,27 +125,27 @@ DEFAULT_BIRDNET_PATHS = {
 }
 
 # ── BirdNET CSV filename → aviary name mapping ──
-# Detection CSVs should be named ``aviary_N_detections.csv``.
+# Detection CSVs should be named ``dev_aviary_N_detections.csv``.
 # The suffix is stripped automatically; see ``_strip_birdnet_suffix()``.
 BIRDNET_CSV_TO_AVIARY: Dict[str, List[str]] = {
-    "aviary_1": ["aviary_1"],
-    "aviary_2": ["aviary_2"],
-    "aviary_3": ["aviary_3"],
-    "aviary_4": ["aviary_4"],
-    "aviary_5": ["aviary_5"],
-    "aviary_6": ["aviary_6"],
+    "dev_aviary_1": ["dev_aviary_1"],
+    "dev_aviary_2": ["dev_aviary_2"],
+    "dev_aviary_3": ["dev_aviary_3"],
+    "dev_aviary_4": ["dev_aviary_4"],
+    "dev_aviary_5": ["dev_aviary_5"],
+    "dev_aviary_6": ["dev_aviary_6"],
 }
 
 # ── BirdNET CSV → embedding prefix ──
 # Embeddings were extracted from the same audio, so the prefix mapping
 # matches the ARIA one.
 BIRDNET_CSV_TO_EMBEDDING_PREFIX: Dict[str, str] = {
-    "aviary_1": "aviary_1",
-    "aviary_2": "aviary_2",
-    "aviary_3": "aviary_3",
-    "aviary_4": "aviary_4",
-    "aviary_5": "aviary_5",
-    "aviary_6": "aviary_6",
+    "dev_aviary_1": "dev_aviary_1",
+    "dev_aviary_2": "dev_aviary_2",
+    "dev_aviary_3": "dev_aviary_3",
+    "dev_aviary_4": "dev_aviary_4",
+    "dev_aviary_5": "dev_aviary_5",
+    "dev_aviary_6": "dev_aviary_6",
 }
 
 
@@ -276,9 +276,9 @@ def _strip_birdnet_suffix(stem: str) -> str:
     """Strip known BirdNET suffixes to extract the aviary identifier.
 
     Handles patterns like:
-    - ``aviary_1_detections`` → ``aviary_1``
-    - ``aviary_1_all_results`` → ``aviary_1``
-    - ``aviary_1_filtered_results`` → ``aviary_1``
+    - ``dev_aviary_1_detections`` → ``dev_aviary_1``
+    - ``dev_aviary_1_all_results`` → ``dev_aviary_1``
+    - ``dev_aviary_1_filtered_results`` → ``dev_aviary_1``
     """
     for suffix in [
         "_detections",
@@ -345,7 +345,7 @@ def main():
     parser.add_argument(
         "--detections-dir",
         default=str(DEFAULT_BIRDNET_PATHS["detections_dir"]),
-        help="Directory containing BirdNET detection CSVs (aviary_N_detections.csv)",
+        help="Directory containing BirdNET detection CSVs (dev_aviary_N_detections.csv)",
     )
     parser.add_argument("--aviary-csv", default=str(DEFAULT_BIRDNET_PATHS["aviary_csv"]))
     parser.add_argument("--aviary-config", default=str(DEFAULT_BIRDNET_PATHS["aviary_config"]),
