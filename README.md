@@ -55,11 +55,15 @@ pip install aria-inference
 aria-inference --input /path/to/aviary_1_audio/ --output detections/aviary_1_detections.csv
 ```
 
-**Option B — BirdNET**:
+**Option B — Customized BirdNET**:
 ```bash
 pip install aria-inference-birdnet
 aria-inference-birdnet --input /path/to/aviary_1_audio/ --output detections/aviary_1_detections.csv
 ```
+
+**Option C - Default BirdNET (simple baseline detector)**:
+In the baseline repository, the reported `birdnet_detections` were generated with the default BirdNET model for simplicity. Participants are encouraged to also consider the customized BirdNET-only ARIA package (`aria-inference-birdnet`), as it has been adapted specifically for this dataset and may provide a stronger starting point than the default BirdNET configuration. For instructions on running the default BirdNET model, please refer to the official [BirdNET repository](https://github.com/kahst/BirdNET-Analyzer).
+
 
 Detection CSVs must be named `aviary_N_detections.csv` and placed in the `detections/` directory.
 
